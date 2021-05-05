@@ -1,31 +1,35 @@
-<div class="mat-card">
-  <div class="mat-card">
-  <div class="example-container">
-    <mat-form-field>
-      <input  matInput [(ngModel)]= "titleModel" placeholder="Title">
-    </mat-form-field>
-    <br>
+<div class="mat-card" style="background-color: rgb(182, 176, 176);">
+    <mat-card class="example-container">
 
-    <mat-form-field>
-      <input matInput [(ngModel)]= "contentModel" placeholder="Enter your content">
-    </mat-form-field>
-    <br>
+        <mat-form-field>
+          <input matInput [(ngModel)]="titleModel" placeholder="Title">
+        </mat-form-field>
+        <br>
 
-    <mat-form-field>
+        <mat-form-field>
+          <input matInput [(ngModel)]="contentModel" placeholder="Enter your content">
+        </mat-form-field>
+        <br>
 
-      <input matInput [(ngModel)]= "todoModel" placeholder="What to do">
-    </mat-form-field>
+        <mat-form-field>
 
-    </div>
+          <input matInput [(ngModel)]="todoModel" placeholder="What to do">
+        </mat-form-field>
+        <br>
 
-    <br>
+       <div class="btn"> <button  mat-raised-button color="accent" (click)="createQuicknotes()"> Add Note </button></div>
 
-  <button mat-raised-button color="accent" (click)="createQuicknotes()"> Add Note </button>
-  <hr>
-</div>
+    </mat-card><br><br>
+
+
+
   <p *ngFor="let i of quicknotes">
     <mat-card-title> {{ i.title }} </mat-card-title>
-    <mat-card> {{ i.content }} </mat-card>
-    <mat-card> {{ i.todo }} </mat-card><br>
-  <button mat-favcolor="primary"><mat-icon>Delete</mat-icon></button>
+    <mat-card> {{ i.content }} <br><br> {{ i.todo }} &nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;
+
+      <mat-icon><button id="btndelete" mat-favcolor="primary" (click)="deletenotes(i)">Delete</button></mat-icon>
+    </mat-card>
+  </p>
 </div>

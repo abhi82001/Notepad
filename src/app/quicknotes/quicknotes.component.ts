@@ -44,5 +44,14 @@ export class QuicknotesComponent implements OnInit {
 
        //set the model values to '' again
        this.titleModel = this.todoModel = this.contentModel = '';
-     }
+
+      }
+
+      deletenotes(notes: any) {
+        //console.log(notes)
+        let index = this.quicknotes.indexOf(notes)
+        //console.log(index)
+        this.quicknotes.splice(index, 1);
+        //console.log(this.quicknotes)
+      }
 }
